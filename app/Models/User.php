@@ -22,4 +22,8 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function profileMahasiswa()
+{
+    return $this->hasOne(ProfileMahasiswa::class, 'user_id');
+}
 }

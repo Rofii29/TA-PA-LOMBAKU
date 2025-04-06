@@ -4,6 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\RoleMiddleware;
 
+use App\Http\Controllers\ProfileController;
+
+Route::middleware(['auth', RoleMiddleware::class . ':mahasiswa'])->group(function () {
+    Route::get('/mahasiswa/profile', [ProfileController::class, 'show'])->name('mahasiswa.profile');
+});
+Route::middleware(['auth', RoleMiddleware::class . ':mahasiswa'])->group(function () {
+    Route::get('/mahasiswa/profile', [ProfileController::class, 'show'])->name('mahasiswa.profile');
+    Route::get('/mahasiswa/profile/edit', [ProfileController::class, 'edit'])->name('mahasiswa.profile.edit');
+    Route::post('/mahasiswa/profile/update', [ProfileController::class, 'update'])->name('mahasiswa.profile.update');
+});
 
 // Halaman Utama
 Route::get('/', function () {
