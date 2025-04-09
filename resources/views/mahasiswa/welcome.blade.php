@@ -29,10 +29,12 @@
 
                     <!-- Profile Dropdown Trigger -->
                     <button onclick="toggleDropdown()" 
-                        class="flex items-center space-x-1 text-gray-700 font-semibold 
-                            hover:text-blue-600 transition-colors relative"
+                        class="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors relative"
                         aria-haspopup="true" aria-expanded="false">
-                        <span>{{ Auth::user()->name }}</span>
+                        <div class="flex flex-col items-start">
+                            <span class="font-semibold text-base leading-tight">{{ Auth::user()->name }}</span>
+                            <span class="text-xs text-gray-500 font-medium">{{ Auth::user()->role }}</span>
+                        </div>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-200" 
                             :class="{ 'rotate-180': dropdownOpen }" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -47,7 +49,7 @@
                         opacity-0 scale-95 z-50">
                     <div class="py-2">
                         <!-- Tombol Profile -->
-                        <a href="{{ route('mahasiswa.profile') }}" 
+                        <a href="{{ route('mahasiswa.profile')}}" 
                             class="w-full block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 
                             hover:text-blue-600 transition-colors flex items-center space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" 
