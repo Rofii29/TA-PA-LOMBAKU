@@ -11,14 +11,13 @@
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 flex justify-center items-center min-h-screen">
     <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4 transition-all duration-300 hover:shadow-3xl">
         <div class="flex justify-center mb-8">
-            <div class="bg-blue-600 p-3 rounded-full">
-                <img src="https://cdn-icons-png.flaticon.com/512/6681/6681204.png" alt="Register Icon" class="w-12 h-12">
+            <div class=" ">
+                <img src="{{ asset('lombaku.png') }}" alt="Register Icon" class="w-12 h-12">
             </div>
         </div>
 
         <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
             Create Account
-            <span class="block text-xl font-medium text-gray-500 mt-2">Register to get started</span>
         </h2>
 
         @if(session('status'))
