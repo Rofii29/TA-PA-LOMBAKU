@@ -29,8 +29,8 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.su
 
 // Halaman untuk mahasiswa, dosen, dan admin
 Route::middleware([RoleMiddleware::class . ':mahasiswa'])->group(function () {
-    Route::get('/mahasiswa/welcome', function () {
-        return view('mahasiswa.welcome');
+    Route::get('welcome', function () {
+        return view('welcome');
     });
 });
 

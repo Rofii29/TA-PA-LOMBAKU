@@ -33,7 +33,7 @@ class AuthController extends Controller
 
             // Redirect sesuai role
             if ($role == 'mahasiswa') {
-                return redirect('/mahasiswa/welcome');
+                return redirect('welcome');
             } elseif ($role == 'dosen') {
                 return redirect('/dosen/dashboard');
             } else {
